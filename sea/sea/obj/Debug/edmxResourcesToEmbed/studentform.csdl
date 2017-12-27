@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="studentform" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="studentformContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admission_form" EntityType="studentform.Admission_form" />
+    <EntitySet Name="Enquiry_Type" EntityType="studentform.Enquiry_Type" />
+    <AssociationSet Name="Admission_formEnquiry_Type" Association="studentform.Admission_formEnquiry_Type">
+      <End Role="Admission_form" EntitySet="Admission_form" />
+      <End Role="Enquiry_Type" EntitySet="Enquiry_Type" />
+    </AssociationSet>
+    <EntitySet Name="Student_Type" EntityType="studentform.Student_Type" />
+    <AssociationSet Name="Admission_formStudent_Type" Association="studentform.Admission_formStudent_Type">
+      <End Role="Admission_form" EntitySet="Admission_form" />
+      <End Role="Student_Type" EntitySet="Student_Type" />
+    </AssociationSet>
+    <EntitySet Name="Quotas" EntityType="studentform.Quota" />
+    <AssociationSet Name="Admission_formQuota" Association="studentform.Admission_formQuota">
+      <End Role="Admission_form" EntitySet="Admission_form" />
+      <End Role="Quota" EntitySet="Quotas" />
+    </AssociationSet>
+    <EntitySet Name="Students" EntityType="studentform.Student" />
+    <EntitySet Name="Staffs" EntityType="studentform.Staff" />
+    <EntitySet Name="Staff_Type" EntityType="studentform.Staff_Type" />
+    <AssociationSet Name="StaffStaff_Type" Association="studentform.StaffStaff_Type">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Staff_Type" EntitySet="Staff_Type" />
+    </AssociationSet>
+    <EntitySet Name="Authorities" EntityType="studentform.Authorities" />
+    <EntitySet Name="Classrooms" EntityType="studentform.Classroom" />
+    <EntitySet Name="Room_Type" EntityType="studentform.Room_Type" />
+    <AssociationSet Name="ClassroomRoom_Type" Association="studentform.ClassroomRoom_Type">
+      <End Role="Classroom" EntitySet="Classrooms" />
+      <End Role="Room_Type" EntitySet="Room_Type" />
+    </AssociationSet>
+    <EntitySet Name="Maps" EntityType="studentform.Map" />
+    <EntitySet Name="Libraries" EntityType="studentform.Library" />
+    <EntitySet Name="Fees" EntityType="studentform.Fees" />
+  </EntityContainer>
+  <EntityType Name="Admission_form">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Enquiry_Type" Relationship="studentform.Admission_formEnquiry_Type" FromRole="Admission_form" ToRole="Enquiry_Type" />
+    <Property Name="Enquiry_TypeId" Type="Int32" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" />
+    <NavigationProperty Name="Student_Type" Relationship="studentform.Admission_formStudent_Type" FromRole="Admission_form" ToRole="Student_Type" />
+    <Property Name="Student_TypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Quota" Relationship="studentform.Admission_formQuota" FromRole="Admission_form" ToRole="Quota" />
+    <Property Name="QuotaId" Type="Int32" Nullable="false" />
+    <Property Name="Tenth_Percentage" Type="Int64" Nullable="false" />
+    <Property Name="Plustwo_Percentage" Type="Int64" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Phone_Num" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Enquiry_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Admission_form" Relationship="studentform.Admission_formEnquiry_Type" FromRole="Enquiry_Type" ToRole="Admission_form" />
+  </EntityType>
+  <Association Name="Admission_formEnquiry_Type">
+    <End Type="studentform.Admission_form" Role="Admission_form" Multiplicity="*" />
+    <End Type="studentform.Enquiry_Type" Role="Enquiry_Type" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Enquiry_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Admission_form">
+        <PropertyRef Name="Enquiry_TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Student_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Admission_form" Relationship="studentform.Admission_formStudent_Type" FromRole="Student_Type" ToRole="Admission_form" />
+  </EntityType>
+  <Association Name="Admission_formStudent_Type">
+    <End Type="studentform.Admission_form" Role="Admission_form" Multiplicity="*" />
+    <End Type="studentform.Student_Type" Role="Student_Type" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Student_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Admission_form">
+        <PropertyRef Name="Student_TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Quota">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Admission_form" Relationship="studentform.Admission_formQuota" FromRole="Quota" ToRole="Admission_form" />
+  </EntityType>
+  <Association Name="Admission_formQuota">
+    <End Type="studentform.Admission_form" Role="Admission_form" Multiplicity="*" />
+    <End Type="studentform.Quota" Role="Quota" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Quota">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Admission_form">
+        <PropertyRef Name="QuotaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Reg_Id" Type="Int64" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" />
+    <Property Name="Batch" Type="String" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Phone_Num" Type="Int64" Nullable="false" />
+    <Property Name="TeamviewerID" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Staff_Num" Type="Int64" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" />
+    <Property Name="Designation" Type="String" Nullable="false" />
+    <Property Name="Subject_Handling" Type="String" Nullable="false" />
+    <NavigationProperty Name="Staff_Type" Relationship="studentform.StaffStaff_Type" FromRole="Staff" ToRole="Staff_Type" />
+    <Property Name="Staff_TypeId" Type="Int32" Nullable="false" />
+    <Property Name="Phone_No" Type="Int64" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Teamviewer_Id" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Staffs" Relationship="studentform.StaffStaff_Type" FromRole="Staff_Type" ToRole="Staff" />
+  </EntityType>
+  <Association Name="StaffStaff_Type">
+    <End Type="studentform.Staff" Role="Staff" Multiplicity="*" />
+    <End Type="studentform.Staff_Type" Role="Staff_Type" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Staff_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="Staff_TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Authorities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Number" Type="String" Nullable="false" />
+    <Property Name="Message" Type="String" Nullable="false" />
+    <Property Name="Topic" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Classroom">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Property1" Type="String" Nullable="false" />
+    <Property Name="Class_No" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Room_Type" Relationship="studentform.ClassroomRoom_Type" FromRole="Classroom" ToRole="Room_Type" />
+    <Property Name="Room_TypeId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="Classrooms" Relationship="studentform.ClassroomRoom_Type" FromRole="Room_Type" ToRole="Classroom" />
+  </EntityType>
+  <Association Name="ClassroomRoom_Type">
+    <End Type="studentform.Classroom" Role="Classroom" Multiplicity="*" />
+    <End Type="studentform.Room_Type" Role="Room_Type" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Room_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Classroom">
+        <PropertyRef Name="Room_TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Map">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Floor" Type="String" Nullable="false" />
+    <Property Name="Room_No" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Library">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Book_Name" Type="Int64" Nullable="false" />
+    <Property Name="Author" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fees">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fee_Amount" Type="Int64" Nullable="false" />
+    <Property Name="Department" Type="String" Nullable="false" />
+    <Property Name="Student_Regno" Type="Int64" Nullable="false" />
+    <Property Name="Student_Name" Type="String" Nullable="false" />
+    <Property Name="Date" Type="String" Nullable="false" />
+    <Property Name="Semester" Type="Int64" Nullable="false" />
+    <Property Name="Year" Type="Int64" Nullable="false" />
+  </EntityType>
+</Schema>

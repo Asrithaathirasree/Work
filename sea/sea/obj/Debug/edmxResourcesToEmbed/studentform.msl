@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="studentformStoreContainer" CdmEntityContainer="studentformContainer">
+    <EntitySetMapping Name="Admission_form">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Admission_form)">
+        <MappingFragment StoreEntitySet="Admission_form">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enquiry_TypeId" ColumnName="Enquiry_TypeId" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Student_TypeId" ColumnName="Student_TypeId" />
+          <ScalarProperty Name="QuotaId" ColumnName="QuotaId" />
+          <ScalarProperty Name="Tenth_Percentage" ColumnName="Tenth_Percentage" />
+          <ScalarProperty Name="Plustwo_Percentage" ColumnName="Plustwo_Percentage" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enquiry_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Enquiry_Type)">
+        <MappingFragment StoreEntitySet="Enquiry_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Student_Type)">
+        <MappingFragment StoreEntitySet="Student_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quotas">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Quota)">
+        <MappingFragment StoreEntitySet="Quotas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Student)">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Reg_Id" ColumnName="Reg_Id" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+          <ScalarProperty Name="TeamviewerID" ColumnName="TeamviewerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Staff)">
+        <MappingFragment StoreEntitySet="Staffs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Staff_Num" ColumnName="Staff_Num" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Subject_Handling" ColumnName="Subject_Handling" />
+          <ScalarProperty Name="Staff_TypeId" ColumnName="Staff_TypeId" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Teamviewer_Id" ColumnName="Teamviewer_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Staff_Type)">
+        <MappingFragment StoreEntitySet="Staff_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Authorities">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Authorities)">
+        <MappingFragment StoreEntitySet="Authorities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Classrooms">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Classroom)">
+        <MappingFragment StoreEntitySet="Classrooms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Property1" ColumnName="Property1" />
+          <ScalarProperty Name="Class_No" ColumnName="Class_No" />
+          <ScalarProperty Name="Room_TypeId" ColumnName="Room_TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Room_Type)">
+        <MappingFragment StoreEntitySet="Room_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maps">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Map)">
+        <MappingFragment StoreEntitySet="Maps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Room_No" ColumnName="Room_No" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libraries">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Library)">
+        <MappingFragment StoreEntitySet="Libraries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fees">
+      <EntityTypeMapping TypeName="IsTypeOf(studentform.Fees)">
+        <MappingFragment StoreEntitySet="Fees">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fee_Amount" ColumnName="Fee_Amount" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Student_Regno" ColumnName="Student_Regno" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

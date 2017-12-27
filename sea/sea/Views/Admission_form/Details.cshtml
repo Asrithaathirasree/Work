@@ -1,0 +1,98 @@
+﻿@model sea.Admission_form
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Admission_form</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Department)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Department)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tenth_Percentage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tenth_Percentage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Plustwo_Percentage)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Plustwo_Percentage)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone_Num)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Phone_Num)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Enquiry_Type.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Enquiry_Type.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Student_Type.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Student_Type.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Quota.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Quota.Name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
