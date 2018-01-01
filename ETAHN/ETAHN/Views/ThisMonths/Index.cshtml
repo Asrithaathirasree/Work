@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ETAHN.ThisMonth>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary_Balance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount_Spent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpenseTracker.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary_Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount_Spent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpenseTracker.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

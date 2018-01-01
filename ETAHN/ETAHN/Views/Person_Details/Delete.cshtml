@@ -1,0 +1,104 @@
+﻿@model ETAHN.Person_Details
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Person_Details</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.EntityId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.EntityId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber1)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber1)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PhoneNumber2)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PhoneNumber2)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.EmailId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Occupation)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Occupation)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OccupativeAddress)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OccupativeAddress)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Salary)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Salary)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Person_Type.Father)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Person_Type.Father)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

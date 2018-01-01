@@ -1,0 +1,50 @@
+﻿@model ETAHN.Trip_For
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Trip_For</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Study)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Study)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Employment)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Employment)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tour)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tour)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

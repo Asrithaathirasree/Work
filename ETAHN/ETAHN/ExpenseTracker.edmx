@@ -1,0 +1,2093 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ExpenseTracker.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ExpenseTrackerStoreContainer">
+    <EntitySet Name="ExpenseTrackers" EntityType="ExpenseTracker.Store.ExpenseTrackers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People" EntityType="ExpenseTracker.Store.People" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Person_Details" EntityType="ExpenseTracker.Store.Person_Details" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Person_Type" EntityType="ExpenseTracker.Store.Person_Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Expenses" EntityType="ExpenseTracker.Store.Expenses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Expense_category" EntityType="ExpenseTracker.Store.Expense_category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ThisMonths" EntityType="ExpenseTracker.Store.ThisMonths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExpenseTrackerAndHomeNeeds" EntityType="ExpenseTracker.Store.ExpenseTrackerAndHomeNeeds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Report_Total" EntityType="ExpenseTracker.Store.Report_Total" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Report_By_Person" EntityType="ExpenseTracker.Store.Report_By_Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Report_By_Month" EntityType="ExpenseTracker.Store.Report_By_Month" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Report_By_Date" EntityType="ExpenseTracker.Store.Report_By_Date" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Report_By_Search_And_Filter" EntityType="ExpenseTracker.Store.Report_By_Search_And_Filter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Home_Needs" EntityType="ExpenseTracker.Store.Home_Needs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Monthly_Needs" EntityType="ExpenseTracker.Store.Monthly_Needs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Loans" EntityType="ExpenseTracker.Store.Loans" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Check_List" EntityType="ExpenseTracker.Store.Check_List" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="ExpenseTracker.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Family_Members" EntityType="ExpenseTracker.Store.Family_Members" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LicencedFors" EntityType="ExpenseTracker.Store.LicencedFors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Member_Type" EntityType="ExpenseTracker.Store.Member_Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Home_Ownership" EntityType="ExpenseTracker.Store.Home_Ownership" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vehicles" EntityType="ExpenseTracker.Store.Vehicles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OwnershipOfs" EntityType="ExpenseTracker.Store.OwnershipOfs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Having_Licence" EntityType="ExpenseTracker.Store.Having_Licence" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehileKm_Tracker" EntityType="ExpenseTracker.Store.VehileKm_Tracker" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trip_Check_List" EntityType="ExpenseTracker.Store.Trip_Check_List" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Trip_For" EntityType="ExpenseTracker.Store.Trip_For" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Takens" EntityType="ExpenseTracker.Store.Takens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Need_Name" EntityType="ExpenseTracker.Store.Need_Name" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Home_NeedsLoans" Association="ExpenseTracker.Store.Home_NeedsLoans">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="Loans" EntitySet="Loans" />
+    </AssociationSet>
+    <AssociationSet Name="Home_NeedsCheck_List" Association="ExpenseTracker.Store.Home_NeedsCheck_List">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="Check_List" EntitySet="Check_List" />
+    </AssociationSet>
+    <AssociationSet Name="Home_NeedsVehicle" Association="ExpenseTracker.Store.Home_NeedsVehicle">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="Vehicle" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="Home_NeedsMonthly_Needs" Association="ExpenseTracker.Store.Home_NeedsMonthly_Needs">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="Monthly_Needs" EntitySet="Monthly_Needs" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerPerson_Details" Association="ExpenseTracker.Store.ExpenseTrackerPerson_Details">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Person_Details" EntitySet="Person_Details" />
+    </AssociationSet>
+    <AssociationSet Name="Person_DetailsPerson_Type" Association="ExpenseTracker.Store.Person_DetailsPerson_Type">
+      <End Role="Person_Details" EntitySet="Person_Details" />
+      <End Role="Person_Type" EntitySet="Person_Type" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerExpense" Association="ExpenseTracker.Store.ExpenseTrackerExpense">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Expense" EntitySet="Expenses" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseExpense_category" Association="ExpenseTracker.Store.ExpenseExpense_category">
+      <End Role="Expense" EntitySet="Expenses" />
+      <End Role="Expense_category" EntitySet="Expense_category" />
+    </AssociationSet>
+    <AssociationSet Name="ThisMonthExpenseTracker" Association="ExpenseTracker.Store.ThisMonthExpenseTracker">
+      <End Role="ThisMonth" EntitySet="ThisMonths" />
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerAndHomeNeedsHome_Needs" Association="ExpenseTracker.Store.ExpenseTrackerAndHomeNeedsHome_Needs">
+      <End Role="ExpenseTrackerAndHomeNeeds" EntitySet="ExpenseTrackerAndHomeNeeds" />
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerAndHomeNeedsExpenseTracker" Association="ExpenseTracker.Store.ExpenseTrackerAndHomeNeedsExpenseTracker">
+      <End Role="ExpenseTrackerAndHomeNeeds" EntitySet="ExpenseTrackerAndHomeNeeds" />
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerReport_Total" Association="ExpenseTracker.Store.ExpenseTrackerReport_Total">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Report_Total" EntitySet="Report_Total" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerReport_By_Person" Association="ExpenseTracker.Store.ExpenseTrackerReport_By_Person">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Report_By_Person" EntitySet="Report_By_Person" />
+    </AssociationSet>
+    <AssociationSet Name="Check_ListStatus" Association="ExpenseTracker.Store.Check_ListStatus">
+      <End Role="Check_List" EntitySet="Check_List" />
+      <End Role="Status" EntitySet="Status" />
+    </AssociationSet>
+    <AssociationSet Name="Family_MembersMember_Type" Association="ExpenseTracker.Store.Family_MembersMember_Type">
+      <End Role="Family_Members" EntitySet="Family_Members" />
+      <End Role="Member_Type" EntitySet="Member_Type" />
+    </AssociationSet>
+    <AssociationSet Name="Home_NeedsFamily_Members" Association="ExpenseTracker.Store.Home_NeedsFamily_Members">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="Family_Members" EntitySet="Family_Members" />
+    </AssociationSet>
+    <AssociationSet Name="Family_MembersLicencedFor" Association="ExpenseTracker.Store.Family_MembersLicencedFor">
+      <End Role="Family_Members" EntitySet="Family_Members" />
+      <End Role="LicencedFor" EntitySet="LicencedFors" />
+    </AssociationSet>
+    <AssociationSet Name="Home_OwnershipFamily_Members" Association="ExpenseTracker.Store.Home_OwnershipFamily_Members">
+      <End Role="Home_Ownership" EntitySet="Home_Ownership" />
+      <End Role="Family_Members" EntitySet="Family_Members" />
+    </AssociationSet>
+    <AssociationSet Name="VehicleOwnershipOf" Association="ExpenseTracker.Store.VehicleOwnershipOf">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="OwnershipOf" EntitySet="OwnershipOfs" />
+    </AssociationSet>
+    <AssociationSet Name="VehicleHaving_Licence" Association="ExpenseTracker.Store.VehicleHaving_Licence">
+      <End Role="Vehicle" EntitySet="Vehicles" />
+      <End Role="Having_Licence" EntitySet="Having_Licence" />
+    </AssociationSet>
+    <AssociationSet Name="Home_NeedsVehileKm_Tracker" Association="ExpenseTracker.Store.Home_NeedsVehileKm_Tracker">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="VehileKm_Tracker" EntitySet="VehileKm_Tracker" />
+    </AssociationSet>
+    <AssociationSet Name="Trip_Check_ListTrip_For" Association="ExpenseTracker.Store.Trip_Check_ListTrip_For">
+      <End Role="Trip_Check_List" EntitySet="Trip_Check_List" />
+      <End Role="Trip_For" EntitySet="Trip_For" />
+    </AssociationSet>
+    <AssociationSet Name="Trip_Check_ListTaken" Association="ExpenseTracker.Store.Trip_Check_ListTaken">
+      <End Role="Trip_Check_List" EntitySet="Trip_Check_List" />
+      <End Role="Taken" EntitySet="Takens" />
+    </AssociationSet>
+    <AssociationSet Name="Home_NeedsTrip_Check_List" Association="ExpenseTracker.Store.Home_NeedsTrip_Check_List">
+      <End Role="Home_Needs" EntitySet="Home_Needs" />
+      <End Role="Trip_Check_List" EntitySet="Trip_Check_List" />
+    </AssociationSet>
+    <AssociationSet Name="Monthly_NeedsNeed_Name" Association="ExpenseTracker.Store.Monthly_NeedsNeed_Name">
+      <End Role="Monthly_Needs" EntitySet="Monthly_Needs" />
+      <End Role="Need_Name" EntitySet="Need_Name" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerPerson" Association="ExpenseTracker.Store.ExpenseTrackerPerson">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerReport_By_Search_And_Filter" Association="ExpenseTracker.Store.ExpenseTrackerReport_By_Search_And_Filter">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Report_By_Search_And_Filter" EntitySet="Report_By_Search_And_Filter" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerReport_By_Date" Association="ExpenseTracker.Store.ExpenseTrackerReport_By_Date">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Report_By_Date" EntitySet="Report_By_Date" />
+    </AssociationSet>
+    <AssociationSet Name="ExpenseTrackerReport_By_Month" Association="ExpenseTracker.Store.ExpenseTrackerReport_By_Month">
+      <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+      <End Role="Report_By_Month" EntitySet="Report_By_Month" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ExpenseTrackers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PersonId" Type="int" Nullable="false" />
+    <Property Name="Person_DetailsId" Type="int" Nullable="false" />
+    <Property Name="ExpenseId" Type="int" Nullable="false" />
+    <Property Name="Home_NeedsId" Type="int" Nullable="false" />
+    <Property Name="Report_TotalId" Type="int" Nullable="false" />
+    <Property Name="Report_By_PersonId" Type="int" Nullable="false" />
+    <Property Name="Report_By_MonthId" Type="int" Nullable="false" />
+    <Property Name="Report_By_DateId" Type="int" Nullable="false" />
+    <Property Name="Report_By_Search_And_FilterId" Type="int" Nullable="false" />
+    <Property Name="Family_MembersId" Type="int" Nullable="false" />
+    <Property Name="PersonId1" Type="int" Nullable="false" />
+    <Property Name="Report_By_Search_And_FilterId1" Type="int" Nullable="false" />
+    <Property Name="Report_By_DateId1" Type="int" Nullable="false" />
+    <Property Name="Report_By_MonthId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EntityId" Type="int" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="bigint" Nullable="false" />
+    <Property Name="PhoneNumber2" Type="bigint" Nullable="false" />
+    <Property Name="EmailId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Occupation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OccupativeAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salary" Type="bigint" Nullable="false" />
+    <Property Name="Person_TypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Person_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Father" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mother" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Daughter" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Son" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expenses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="bigint" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Time" Type="bigint" Nullable="false" />
+    <Property Name="Expense_categoryId" Type="int" Nullable="false" />
+    <Property Name="Expense_categoryId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expense_category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Grocery" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bills" Type="bigint" Nullable="false" />
+    <Property Name="Travel" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThisMonths">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Salary_Balance" Type="bigint" Nullable="false" />
+    <Property Name="Amount_Spent" Type="bigint" Nullable="false" />
+    <Property Name="ExpenseTrackerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExpenseTrackerAndHomeNeeds">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Home_NeedsId" Type="int" Nullable="false" />
+    <Property Name="ExpenseTrackerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report_Total">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Total_Income" Type="bigint" Nullable="false" />
+    <Property Name="Till_Date" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report_By_Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalIncome" Type="bigint" Nullable="false" />
+    <Property Name="Till_Date" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report_By_Month">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Month_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Total_Income" Type="bigint" Nullable="false" />
+    <Property Name="Till_Month" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report_By_Date">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Total_Income" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Report_By_Search_And_Filter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Home_Needs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Entity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ExpenseTrackerAndHomeNeedsId" Type="int" Nullable="false" />
+    <Property Name="Monthly_NeedsId" Type="int" Nullable="false" />
+    <Property Name="LoansId" Type="int" Nullable="false" />
+    <Property Name="Check_ListId" Type="int" Nullable="false" />
+    <Property Name="Family_MembersId" Type="int" Nullable="false" />
+    <Property Name="VehicleId" Type="int" Nullable="false" />
+    <Property Name="VehileKm_TrackerId" Type="int" Nullable="false" />
+    <Property Name="Trip_Check_ListId" Type="int" Nullable="false" />
+    <Property Name="Trip_Check_ListId1" Type="int" Nullable="false" />
+    <Property Name="Monthly_NeedsId1" Type="int" Nullable="false" />
+    <Property Name="Family_MembersId1" Type="int" Nullable="false" />
+    <Property Name="Trip_Check_ListId2" Type="int" Nullable="false" />
+    <Property Name="VehileKm_Tracker_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Monthly_Needs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Need_NameId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Loans">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Loan_Reason" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount" Type="bigint" Nullable="false" />
+    <Property Name="Interest" Type="bigint" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Amount_In_Due" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Check_List">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ToDo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Property1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InProcess" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Started" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Completed" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Family_Members">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adhar_Number" Type="bigint" Nullable="false" />
+    <Property Name="PAN_CardNumber" Type="bigint" Nullable="false" />
+    <Property Name="Election_CardNumber" Type="bigint" Nullable="false" />
+    <Property Name="Licence_Number" Type="bigint" Nullable="false" />
+    <Property Name="Bank_Account_detais" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mobile_Number1" Type="bigint" Nullable="false" />
+    <Property Name="Mobile_Number2" Type="bigint" Nullable="false" />
+    <Property Name="Landline" Type="bigint" Nullable="false" />
+    <Property Name="Occupation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Occupation_Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Home_OwnershipId" Type="int" Nullable="false" />
+    <Property Name="LicencedForId" Type="int" Nullable="false" />
+    <Property Name="Member_TypeId" Type="int" Nullable="false" />
+    <Property Name="Home_OwnershipId1" Type="int" Nullable="false" />
+    <Property Name="LicencedForId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LicencedFors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Car" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bike" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Member_Type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Father" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Mother" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Son1" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Home_Ownership">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Own" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Family_MembersId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Insurane_date_Renewal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RCBook_Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Service_DueDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OwnershipOfId" Type="int" Nullable="false" />
+    <Property Name="Having_LicenceId" Type="int" Nullable="false" />
+    <Property Name="OwnershipOfId1" Type="int" Nullable="false" />
+    <Property Name="Having_LicenceId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OwnershipOfs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Bike" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Car" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Having_Licence">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Yes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="No" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehileKm_Tracker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Distance_Covered" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="From" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="To" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fuel_FillUp_Amount" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trip_Check_List">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Thing_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Trip_ForId" Type="int" Nullable="false" />
+    <Property Name="TakenId" Type="int" Nullable="false" />
+    <Property Name="Trip_ForId1" Type="int" Nullable="false" />
+    <Property Name="TakenId1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Trip_For">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Study" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Employment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tour" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Takens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Yes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="no" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Need_Name">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Electricity_Bill" Type="bigint" Nullable="false" />
+    <Property Name="Fund" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="Home_NeedsLoans">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="Loans" Type="ExpenseTracker.Store.Loans" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Loans">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="LoansId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_NeedsCheck_List">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="Check_List" Type="ExpenseTracker.Store.Check_List" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Check_List">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="Check_ListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_NeedsVehicle">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="Vehicle" Type="ExpenseTracker.Store.Vehicles" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="VehicleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_NeedsMonthly_Needs">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="Monthly_Needs" Type="ExpenseTracker.Store.Monthly_Needs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Monthly_Needs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="Monthly_NeedsId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerPerson_Details">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Person_Details" Type="ExpenseTracker.Store.Person_Details" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person_Details">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="Person_DetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Person_DetailsPerson_Type">
+    <End Role="Person_Details" Type="ExpenseTracker.Store.Person_Details" Multiplicity="*" />
+    <End Role="Person_Type" Type="ExpenseTracker.Store.Person_Type" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person_Details">
+        <PropertyRef Name="Person_TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerExpense">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Expense" Type="ExpenseTracker.Store.Expenses" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Expense">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="ExpenseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseExpense_category">
+    <End Role="Expense" Type="ExpenseTracker.Store.Expenses" Multiplicity="*" />
+    <End Role="Expense_category" Type="ExpenseTracker.Store.Expense_category" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Expense_category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Expense">
+        <PropertyRef Name="Expense_categoryId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ThisMonthExpenseTracker">
+    <End Role="ThisMonth" Type="ExpenseTracker.Store.ThisMonths" Multiplicity="*" />
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenseTracker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ThisMonth">
+        <PropertyRef Name="ExpenseTrackerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerAndHomeNeedsHome_Needs">
+    <End Role="ExpenseTrackerAndHomeNeeds" Type="ExpenseTracker.Store.ExpenseTrackerAndHomeNeeds" Multiplicity="*" />
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Home_Needs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTrackerAndHomeNeeds">
+        <PropertyRef Name="Home_NeedsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerAndHomeNeedsExpenseTracker">
+    <End Role="ExpenseTrackerAndHomeNeeds" Type="ExpenseTracker.Store.ExpenseTrackerAndHomeNeeds" Multiplicity="*" />
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="ExpenseTracker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTrackerAndHomeNeeds">
+        <PropertyRef Name="ExpenseTrackerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerReport_Total">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Report_Total" Type="ExpenseTracker.Store.Report_Total" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Report_Total">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="Report_TotalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerReport_By_Person">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Report_By_Person" Type="ExpenseTracker.Store.Report_By_Person" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Report_By_Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="Report_By_PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Check_ListStatus">
+    <End Role="Check_List" Type="ExpenseTracker.Store.Check_List" Multiplicity="*" />
+    <End Role="Status" Type="ExpenseTracker.Store.Status" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Check_List">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Family_MembersMember_Type">
+    <End Role="Family_Members" Type="ExpenseTracker.Store.Family_Members" Multiplicity="*" />
+    <End Role="Member_Type" Type="ExpenseTracker.Store.Member_Type" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Member_Type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Family_Members">
+        <PropertyRef Name="Member_TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_NeedsFamily_Members">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="Family_Members" Type="ExpenseTracker.Store.Family_Members" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Family_Members">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="Family_MembersId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Family_MembersLicencedFor">
+    <End Role="Family_Members" Type="ExpenseTracker.Store.Family_Members" Multiplicity="*" />
+    <End Role="LicencedFor" Type="ExpenseTracker.Store.LicencedFors" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="LicencedFor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Family_Members">
+        <PropertyRef Name="LicencedForId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_OwnershipFamily_Members">
+    <End Role="Home_Ownership" Type="ExpenseTracker.Store.Home_Ownership" Multiplicity="*" />
+    <End Role="Family_Members" Type="ExpenseTracker.Store.Family_Members" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Family_Members">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Ownership">
+        <PropertyRef Name="Family_MembersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehicleOwnershipOf">
+    <End Role="Vehicle" Type="ExpenseTracker.Store.Vehicles" Multiplicity="*" />
+    <End Role="OwnershipOf" Type="ExpenseTracker.Store.OwnershipOfs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="OwnershipOf">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="OwnershipOfId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehicleHaving_Licence">
+    <End Role="Vehicle" Type="ExpenseTracker.Store.Vehicles" Multiplicity="*" />
+    <End Role="Having_Licence" Type="ExpenseTracker.Store.Having_Licence" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Having_Licence">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehicle">
+        <PropertyRef Name="Having_LicenceId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_NeedsVehileKm_Tracker">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="VehileKm_Tracker" Type="ExpenseTracker.Store.VehileKm_Tracker" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="VehileKm_Tracker">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="VehileKm_Tracker_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Trip_Check_ListTrip_For">
+    <End Role="Trip_Check_List" Type="ExpenseTracker.Store.Trip_Check_List" Multiplicity="*" />
+    <End Role="Trip_For" Type="ExpenseTracker.Store.Trip_For" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Trip_For">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trip_Check_List">
+        <PropertyRef Name="Trip_ForId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Trip_Check_ListTaken">
+    <End Role="Trip_Check_List" Type="ExpenseTracker.Store.Trip_Check_List" Multiplicity="*" />
+    <End Role="Taken" Type="ExpenseTracker.Store.Takens" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Taken">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Trip_Check_List">
+        <PropertyRef Name="TakenId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Home_NeedsTrip_Check_List">
+    <End Role="Home_Needs" Type="ExpenseTracker.Store.Home_Needs" Multiplicity="*" />
+    <End Role="Trip_Check_List" Type="ExpenseTracker.Store.Trip_Check_List" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Trip_Check_List">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Home_Needs">
+        <PropertyRef Name="Trip_Check_ListId2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Monthly_NeedsNeed_Name">
+    <End Role="Monthly_Needs" Type="ExpenseTracker.Store.Monthly_Needs" Multiplicity="*" />
+    <End Role="Need_Name" Type="ExpenseTracker.Store.Need_Name" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Need_Name">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Monthly_Needs">
+        <PropertyRef Name="Need_NameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerPerson">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Person" Type="ExpenseTracker.Store.People" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="PersonId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerReport_By_Search_And_Filter">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Report_By_Search_And_Filter" Type="ExpenseTracker.Store.Report_By_Search_And_Filter" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Report_By_Search_And_Filter">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="Report_By_Search_And_FilterId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerReport_By_Date">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Report_By_Date" Type="ExpenseTracker.Store.Report_By_Date" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Report_By_Date">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="Report_By_DateId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ExpenseTrackerReport_By_Month">
+    <End Role="ExpenseTracker" Type="ExpenseTracker.Store.ExpenseTrackers" Multiplicity="*" />
+    <End Role="Report_By_Month" Type="ExpenseTracker.Store.Report_By_Month" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Report_By_Month">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExpenseTracker">
+        <PropertyRef Name="Report_By_MonthId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ExpenseTracker" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ExpenseTrackerContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ExpenseTrackers" EntityType="ExpenseTracker.ExpenseTracker" />
+          <EntitySet Name="People" EntityType="ExpenseTracker.Person" />
+          <EntitySet Name="Person_Details" EntityType="ExpenseTracker.Person_Details" />
+          <EntitySet Name="Person_Type" EntityType="ExpenseTracker.Person_Type" />
+          <EntitySet Name="Expenses" EntityType="ExpenseTracker.Expense" />
+          <EntitySet Name="Expense_category" EntityType="ExpenseTracker.Expense_category" />
+          <EntitySet Name="ThisMonths" EntityType="ExpenseTracker.ThisMonth" />
+          <EntitySet Name="ExpenseTrackerAndHomeNeeds" EntityType="ExpenseTracker.ExpenseTrackerAndHomeNeeds" />
+          <EntitySet Name="Report_Total" EntityType="ExpenseTracker.Report_Total" />
+          <EntitySet Name="Report_By_Person" EntityType="ExpenseTracker.Report_By_Person" />
+          <EntitySet Name="Report_By_Month" EntityType="ExpenseTracker.Report_By_Month" />
+          <EntitySet Name="Report_By_Date" EntityType="ExpenseTracker.Report_By_Date" />
+          <EntitySet Name="Report_By_Search_And_Filter" EntityType="ExpenseTracker.Report_By_Search_And_Filter" />
+          <EntitySet Name="Home_Needs" EntityType="ExpenseTracker.Home_Needs" />
+          <EntitySet Name="Monthly_Needs" EntityType="ExpenseTracker.Monthly_Needs" />
+          <EntitySet Name="Loans" EntityType="ExpenseTracker.Loans" />
+          <EntitySet Name="Check_List" EntityType="ExpenseTracker.Check_List" />
+          <EntitySet Name="Status" EntityType="ExpenseTracker.Status" />
+          <EntitySet Name="Family_Members" EntityType="ExpenseTracker.Family_Members" />
+          <EntitySet Name="LicencedFors" EntityType="ExpenseTracker.LicencedFor" />
+          <EntitySet Name="Member_Type" EntityType="ExpenseTracker.Member_Type" />
+          <EntitySet Name="Home_Ownership" EntityType="ExpenseTracker.Home_Ownership" />
+          <EntitySet Name="Vehicles" EntityType="ExpenseTracker.Vehicle" />
+          <EntitySet Name="OwnershipOfs" EntityType="ExpenseTracker.OwnershipOf" />
+          <EntitySet Name="Having_Licence" EntityType="ExpenseTracker.Having_Licence" />
+          <EntitySet Name="VehileKm_Tracker" EntityType="ExpenseTracker.VehileKm_Tracker" />
+          <EntitySet Name="Trip_Check_List" EntityType="ExpenseTracker.Trip_Check_List" />
+          <EntitySet Name="Trip_For" EntityType="ExpenseTracker.Trip_For" />
+          <EntitySet Name="Takens" EntityType="ExpenseTracker.Taken" />
+          <AssociationSet Name="Home_NeedsLoans" Association="ExpenseTracker.Home_NeedsLoans">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="Loans" EntitySet="Loans" />
+          </AssociationSet>
+          <AssociationSet Name="Home_NeedsCheck_List" Association="ExpenseTracker.Home_NeedsCheck_List">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="Check_List" EntitySet="Check_List" />
+          </AssociationSet>
+          <AssociationSet Name="Home_NeedsVehicle" Association="ExpenseTracker.Home_NeedsVehicle">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="Vehicle" EntitySet="Vehicles" />
+          </AssociationSet>
+          <EntitySet Name="Need_Name" EntityType="ExpenseTracker.Need_Name" />
+          <AssociationSet Name="Home_NeedsMonthly_Needs" Association="ExpenseTracker.Home_NeedsMonthly_Needs">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="Monthly_Needs" EntitySet="Monthly_Needs" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerPerson_Details" Association="ExpenseTracker.ExpenseTrackerPerson_Details">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Person_Details" EntitySet="Person_Details" />
+          </AssociationSet>
+          <AssociationSet Name="Person_DetailsPerson_Type" Association="ExpenseTracker.Person_DetailsPerson_Type">
+            <End Role="Person_Details" EntitySet="Person_Details" />
+            <End Role="Person_Type" EntitySet="Person_Type" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerExpense" Association="ExpenseTracker.ExpenseTrackerExpense">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Expense" EntitySet="Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseExpense_category" Association="ExpenseTracker.ExpenseExpense_category">
+            <End Role="Expense" EntitySet="Expenses" />
+            <End Role="Expense_category" EntitySet="Expense_category" />
+          </AssociationSet>
+          <AssociationSet Name="ThisMonthExpenseTracker" Association="ExpenseTracker.ThisMonthExpenseTracker">
+            <End Role="ThisMonth" EntitySet="ThisMonths" />
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerAndHomeNeedsHome_Needs" Association="ExpenseTracker.ExpenseTrackerAndHomeNeedsHome_Needs">
+            <End Role="ExpenseTrackerAndHomeNeeds" EntitySet="ExpenseTrackerAndHomeNeeds" />
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerAndHomeNeedsExpenseTracker" Association="ExpenseTracker.ExpenseTrackerAndHomeNeedsExpenseTracker">
+            <End Role="ExpenseTrackerAndHomeNeeds" EntitySet="ExpenseTrackerAndHomeNeeds" />
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerReport_Total" Association="ExpenseTracker.ExpenseTrackerReport_Total">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Report_Total" EntitySet="Report_Total" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerReport_By_Person" Association="ExpenseTracker.ExpenseTrackerReport_By_Person">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Report_By_Person" EntitySet="Report_By_Person" />
+          </AssociationSet>
+          <AssociationSet Name="Check_ListStatus" Association="ExpenseTracker.Check_ListStatus">
+            <End Role="Check_List" EntitySet="Check_List" />
+            <End Role="Status" EntitySet="Status" />
+          </AssociationSet>
+          <AssociationSet Name="Family_MembersMember_Type" Association="ExpenseTracker.Family_MembersMember_Type">
+            <End Role="Family_Members" EntitySet="Family_Members" />
+            <End Role="Member_Type" EntitySet="Member_Type" />
+          </AssociationSet>
+          <AssociationSet Name="Home_NeedsFamily_Members" Association="ExpenseTracker.Home_NeedsFamily_Members">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="Family_Members" EntitySet="Family_Members" />
+          </AssociationSet>
+          <AssociationSet Name="Family_MembersLicencedFor" Association="ExpenseTracker.Family_MembersLicencedFor">
+            <End Role="Family_Members" EntitySet="Family_Members" />
+            <End Role="LicencedFor" EntitySet="LicencedFors" />
+          </AssociationSet>
+          <AssociationSet Name="Home_OwnershipFamily_Members" Association="ExpenseTracker.Home_OwnershipFamily_Members">
+            <End Role="Home_Ownership" EntitySet="Home_Ownership" />
+            <End Role="Family_Members" EntitySet="Family_Members" />
+          </AssociationSet>
+          <AssociationSet Name="VehicleOwnershipOf" Association="ExpenseTracker.VehicleOwnershipOf">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="OwnershipOf" EntitySet="OwnershipOfs" />
+          </AssociationSet>
+          <AssociationSet Name="VehicleHaving_Licence" Association="ExpenseTracker.VehicleHaving_Licence">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="Having_Licence" EntitySet="Having_Licence" />
+          </AssociationSet>
+          <AssociationSet Name="Home_NeedsVehileKm_Tracker" Association="ExpenseTracker.Home_NeedsVehileKm_Tracker">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="VehileKm_Tracker" EntitySet="VehileKm_Tracker" />
+          </AssociationSet>
+          <AssociationSet Name="Trip_Check_ListTrip_For" Association="ExpenseTracker.Trip_Check_ListTrip_For">
+            <End Role="Trip_Check_List" EntitySet="Trip_Check_List" />
+            <End Role="Trip_For" EntitySet="Trip_For" />
+          </AssociationSet>
+          <AssociationSet Name="Trip_Check_ListTaken" Association="ExpenseTracker.Trip_Check_ListTaken">
+            <End Role="Trip_Check_List" EntitySet="Trip_Check_List" />
+            <End Role="Taken" EntitySet="Takens" />
+          </AssociationSet>
+          <AssociationSet Name="Home_NeedsTrip_Check_List" Association="ExpenseTracker.Home_NeedsTrip_Check_List">
+            <End Role="Home_Needs" EntitySet="Home_Needs" />
+            <End Role="Trip_Check_List" EntitySet="Trip_Check_List" />
+          </AssociationSet>
+          <AssociationSet Name="Monthly_NeedsNeed_Name" Association="ExpenseTracker.Monthly_NeedsNeed_Name">
+            <End Role="Monthly_Needs" EntitySet="Monthly_Needs" />
+            <End Role="Need_Name" EntitySet="Need_Name" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerPerson" Association="ExpenseTracker.ExpenseTrackerPerson">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerReport_By_Search_And_Filter" Association="ExpenseTracker.ExpenseTrackerReport_By_Search_And_Filter">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Report_By_Search_And_Filter" EntitySet="Report_By_Search_And_Filter" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerReport_By_Date" Association="ExpenseTracker.ExpenseTrackerReport_By_Date">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Report_By_Date" EntitySet="Report_By_Date" />
+          </AssociationSet>
+          <AssociationSet Name="ExpenseTrackerReport_By_Month" Association="ExpenseTracker.ExpenseTrackerReport_By_Month">
+            <End Role="ExpenseTracker" EntitySet="ExpenseTrackers" />
+            <End Role="Report_By_Month" EntitySet="Report_By_Month" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ExpenseTracker">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="PersonId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person_Details" Relationship="ExpenseTracker.ExpenseTrackerPerson_Details" FromRole="ExpenseTracker" ToRole="Person_Details" />
+          <Property Name="Person_DetailsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Expense" Relationship="ExpenseTracker.ExpenseTrackerExpense" FromRole="ExpenseTracker" ToRole="Expense" />
+          <Property Name="ExpenseId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ThisMonths" Relationship="ExpenseTracker.ThisMonthExpenseTracker" FromRole="ExpenseTracker" ToRole="ThisMonth" />
+          <Property Name="Home_NeedsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackerAndHomeNeeds" Relationship="ExpenseTracker.ExpenseTrackerAndHomeNeedsExpenseTracker" FromRole="ExpenseTracker" ToRole="ExpenseTrackerAndHomeNeeds" />
+          <NavigationProperty Name="Report_Total" Relationship="ExpenseTracker.ExpenseTrackerReport_Total" FromRole="ExpenseTracker" ToRole="Report_Total" />
+          <Property Name="Report_TotalId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Report_By_Person" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Person" FromRole="ExpenseTracker" ToRole="Report_By_Person" />
+          <Property Name="Report_By_PersonId" Type="Int32" Nullable="false" />
+          <Property Name="Report_By_MonthId" Type="Int32" Nullable="false" />
+          <Property Name="Report_By_DateId" Type="Int32" Nullable="false" />
+          <Property Name="Report_By_Search_And_FilterId" Type="Int32" Nullable="false" />
+          <Property Name="Family_MembersId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="ExpenseTracker.ExpenseTrackerPerson" FromRole="ExpenseTracker" ToRole="Person" />
+          <Property Name="PersonId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Report_By_Search_And_Filter" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Search_And_Filter" FromRole="ExpenseTracker" ToRole="Report_By_Search_And_Filter" />
+          <Property Name="Report_By_Search_And_FilterId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Report_By_Date" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Date" FromRole="ExpenseTracker" ToRole="Report_By_Date" />
+          <Property Name="Report_By_DateId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Report_By_Month" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Month" FromRole="ExpenseTracker" ToRole="Report_By_Month" />
+          <Property Name="Report_By_MonthId1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerPerson" FromRole="Person" ToRole="ExpenseTracker" />
+        </EntityType>
+        <EntityType Name="Person_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="EntityId" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber1" Type="Int64" Nullable="false" />
+          <Property Name="PhoneNumber2" Type="Int64" Nullable="false" />
+          <Property Name="EmailId" Type="String" Nullable="false" />
+          <Property Name="Occupation" Type="String" Nullable="false" />
+          <Property Name="OccupativeAddress" Type="String" Nullable="false" />
+          <Property Name="Salary" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerPerson_Details" FromRole="Person_Details" ToRole="ExpenseTracker" />
+          <NavigationProperty Name="Person_Type" Relationship="ExpenseTracker.Person_DetailsPerson_Type" FromRole="Person_Details" ToRole="Person_Type" />
+          <Property Name="Person_TypeId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Father" Type="String" Nullable="false" />
+          <Property Name="Mother" Type="String" Nullable="false" />
+          <Property Name="Daughter" Type="String" Nullable="false" />
+          <Property Name="Son" Type="String" Nullable="false" />
+          <NavigationProperty Name="Person_Details" Relationship="ExpenseTracker.Person_DetailsPerson_Type" FromRole="Person_Type" ToRole="Person_Details" />
+        </EntityType>
+        <EntityType Name="Expense">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Amount" Type="Int64" Nullable="false" />
+          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="Time" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerExpense" FromRole="Expense" ToRole="ExpenseTracker" />
+          <Property Name="Expense_categoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Expense_category" Relationship="ExpenseTracker.ExpenseExpense_category" FromRole="Expense" ToRole="Expense_category" />
+          <Property Name="Expense_categoryId1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expense_category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Grocery" Type="String" Nullable="false" />
+          <Property Name="Bills" Type="Int64" Nullable="false" />
+          <Property Name="Travel" Type="String" Nullable="false" />
+          <NavigationProperty Name="Expenses" Relationship="ExpenseTracker.ExpenseExpense_category" FromRole="Expense_category" ToRole="Expense" />
+        </EntityType>
+        <EntityType Name="ThisMonth">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Salary_Balance" Type="Int64" Nullable="false" />
+          <Property Name="Amount_Spent" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ExpenseTracker" Relationship="ExpenseTracker.ThisMonthExpenseTracker" FromRole="ThisMonth" ToRole="ExpenseTracker" />
+          <Property Name="ExpenseTrackerId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpenseTrackerAndHomeNeeds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.ExpenseTrackerAndHomeNeedsHome_Needs" FromRole="ExpenseTrackerAndHomeNeeds" ToRole="Home_Needs" />
+          <Property Name="Home_NeedsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ExpenseTracker" Relationship="ExpenseTracker.ExpenseTrackerAndHomeNeedsExpenseTracker" FromRole="ExpenseTrackerAndHomeNeeds" ToRole="ExpenseTracker" />
+          <Property Name="ExpenseTrackerId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Report_Total">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total_Income" Type="Int64" Nullable="false" />
+          <Property Name="Till_Date" Type="String" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerReport_Total" FromRole="Report_Total" ToRole="ExpenseTracker" />
+        </EntityType>
+        <EntityType Name="Report_By_Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Person" Type="String" Nullable="false" />
+          <Property Name="TotalIncome" Type="Int64" Nullable="false" />
+          <Property Name="Till_Date" Type="String" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Person" FromRole="Report_By_Person" ToRole="ExpenseTracker" />
+        </EntityType>
+        <EntityType Name="Report_By_Month">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Month_Name" Type="String" Nullable="false" />
+          <Property Name="Total_Income" Type="Int64" Nullable="false" />
+          <Property Name="Till_Month" Type="String" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Month" FromRole="Report_By_Month" ToRole="ExpenseTracker" />
+        </EntityType>
+        <EntityType Name="Report_By_Date">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="Total_Income" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Date" FromRole="Report_By_Date" ToRole="ExpenseTracker" />
+        </EntityType>
+        <EntityType Name="Report_By_Search_And_Filter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Person" Type="String" Nullable="false" />
+          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackers" Relationship="ExpenseTracker.ExpenseTrackerReport_By_Search_And_Filter" FromRole="Report_By_Search_And_Filter" ToRole="ExpenseTracker" />
+        </EntityType>
+        <EntityType Name="Home_Needs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entity" Type="String" Nullable="false" />
+          <Property Name="ExpenseTrackerAndHomeNeedsId" Type="Int32" Nullable="false" />
+          <Property Name="Monthly_NeedsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Loan" Relationship="ExpenseTracker.Home_NeedsLoans" FromRole="Home_Needs" ToRole="Loans" />
+          <Property Name="LoansId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Check_List" Relationship="ExpenseTracker.Home_NeedsCheck_List" FromRole="Home_Needs" ToRole="Check_List" />
+          <Property Name="Check_ListId" Type="Int32" Nullable="false" />
+          <Property Name="Family_MembersId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Vehicle" Relationship="ExpenseTracker.Home_NeedsVehicle" FromRole="Home_Needs" ToRole="Vehicle" />
+          <Property Name="VehicleId" Type="Int32" Nullable="false" />
+          <Property Name="VehileKm_TrackerId" Type="Int32" Nullable="false" />
+          <Property Name="Trip_Check_ListId" Type="Int32" Nullable="false" />
+          <Property Name="Trip_Check_ListId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Monthly_Needs" Relationship="ExpenseTracker.Home_NeedsMonthly_Needs" FromRole="Home_Needs" ToRole="Monthly_Needs" />
+          <Property Name="Monthly_NeedsId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ExpenseTrackerAndHomeNeeds" Relationship="ExpenseTracker.ExpenseTrackerAndHomeNeedsHome_Needs" FromRole="Home_Needs" ToRole="ExpenseTrackerAndHomeNeeds" />
+          <NavigationProperty Name="Family_Members" Relationship="ExpenseTracker.Home_NeedsFamily_Members" FromRole="Home_Needs" ToRole="Family_Members" />
+          <Property Name="Family_MembersId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VehileKm_Tracker" Relationship="ExpenseTracker.Home_NeedsVehileKm_Tracker" FromRole="Home_Needs" ToRole="VehileKm_Tracker" />
+          <NavigationProperty Name="Trip_Check_List" Relationship="ExpenseTracker.Home_NeedsTrip_Check_List" FromRole="Home_Needs" ToRole="Trip_Check_List" />
+          <Property Name="Trip_Check_ListId2" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Monthly_Needs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <Property Name="Amount" Type="Int64" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsMonthly_Needs" FromRole="Monthly_Needs" ToRole="Home_Needs" />
+          <NavigationProperty Name="Need_Name" Relationship="ExpenseTracker.Monthly_NeedsNeed_Name" FromRole="Monthly_Needs" ToRole="Need_Name" />
+          <Property Name="Need_NameId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Loans">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Loan_Reason" Type="String" Nullable="false" />
+          <Property Name="Amount" Type="Int64" Nullable="false" />
+          <Property Name="Interest" Type="Int64" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <Property Name="Amount_In_Due" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsLoans" FromRole="Loans" ToRole="Home_Needs" />
+        </EntityType>
+        <EntityType Name="Check_List">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" />
+          <Property Name="ToDo" Type="String" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" />
+          <Property Name="Property1" Type="String" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsCheck_List" FromRole="Check_List" ToRole="Home_Needs" />
+          <NavigationProperty Name="Status" Relationship="ExpenseTracker.Check_ListStatus" FromRole="Check_List" ToRole="Status" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InProcess" Type="String" Nullable="false" />
+          <Property Name="Started" Type="String" Nullable="false" />
+          <Property Name="Completed" Type="String" Nullable="false" />
+          <NavigationProperty Name="Check_List" Relationship="ExpenseTracker.Check_ListStatus" FromRole="Status" ToRole="Check_List" />
+        </EntityType>
+        <EntityType Name="Family_Members">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Email_id" Type="String" Nullable="false" />
+          <Property Name="Adhar_Number" Type="Int64" Nullable="false" />
+          <Property Name="PAN_CardNumber" Type="Int64" Nullable="false" />
+          <Property Name="Election_CardNumber" Type="Int64" Nullable="false" />
+          <Property Name="Licence_Number" Type="Int64" Nullable="false" />
+          <Property Name="Bank_Account_detais" Type="String" Nullable="false" />
+          <Property Name="Mobile_Number1" Type="Int64" Nullable="false" />
+          <Property Name="Mobile_Number2" Type="Int64" Nullable="false" />
+          <Property Name="Landline" Type="Int64" Nullable="false" />
+          <Property Name="Occupation" Type="String" Nullable="false" />
+          <Property Name="Occupation_Location" Type="String" Nullable="false" />
+          <Property Name="Home_OwnershipId" Type="Int32" Nullable="false" />
+          <Property Name="LicencedForId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member_Type" Relationship="ExpenseTracker.Family_MembersMember_Type" FromRole="Family_Members" ToRole="Member_Type" />
+          <Property Name="Member_TypeId" Type="Int32" Nullable="false" />
+          <Property Name="Home_OwnershipId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsFamily_Members" FromRole="Family_Members" ToRole="Home_Needs" />
+          <NavigationProperty Name="LicencedFor" Relationship="ExpenseTracker.Family_MembersLicencedFor" FromRole="Family_Members" ToRole="LicencedFor" />
+          <Property Name="LicencedForId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home_Ownership" Relationship="ExpenseTracker.Home_OwnershipFamily_Members" FromRole="Family_Members" ToRole="Home_Ownership" />
+        </EntityType>
+        <EntityType Name="LicencedFor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Car" Type="String" Nullable="false" />
+          <Property Name="Bike" Type="String" Nullable="false" />
+          <NavigationProperty Name="Family_Members" Relationship="ExpenseTracker.Family_MembersLicencedFor" FromRole="LicencedFor" ToRole="Family_Members" />
+        </EntityType>
+        <EntityType Name="Member_Type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Father" Type="String" Nullable="false" />
+          <Property Name="Mother" Type="String" Nullable="false" />
+          <Property Name="Son1" Type="String" Nullable="false" />
+          <NavigationProperty Name="Family_Members" Relationship="ExpenseTracker.Family_MembersMember_Type" FromRole="Member_Type" ToRole="Family_Members" />
+        </EntityType>
+        <EntityType Name="Home_Ownership">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rent" Type="String" Nullable="false" />
+          <Property Name="Own" Type="String" Nullable="false" />
+          <NavigationProperty Name="Family_Members" Relationship="ExpenseTracker.Home_OwnershipFamily_Members" FromRole="Home_Ownership" ToRole="Family_Members" />
+          <Property Name="Family_MembersId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Insurane_date_Renewal" Type="String" Nullable="false" />
+          <Property Name="RCBook_Details" Type="String" Nullable="false" />
+          <Property Name="Service_DueDate" Type="String" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsVehicle" FromRole="Vehicle" ToRole="Home_Needs" />
+          <Property Name="OwnershipOfId" Type="Int32" Nullable="false" />
+          <Property Name="Having_LicenceId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OwnershipOf" Relationship="ExpenseTracker.VehicleOwnershipOf" FromRole="Vehicle" ToRole="OwnershipOf" />
+          <Property Name="OwnershipOfId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Having_Licence" Relationship="ExpenseTracker.VehicleHaving_Licence" FromRole="Vehicle" ToRole="Having_Licence" />
+          <Property Name="Having_LicenceId1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OwnershipOf">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Bike" Type="String" Nullable="false" />
+          <Property Name="Car" Type="String" Nullable="false" />
+          <NavigationProperty Name="Vehicles" Relationship="ExpenseTracker.VehicleOwnershipOf" FromRole="OwnershipOf" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="Having_Licence">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yes" Type="String" Nullable="false" />
+          <Property Name="No" Type="String" Nullable="false" />
+          <NavigationProperty Name="Vehicles" Relationship="ExpenseTracker.VehicleHaving_Licence" FromRole="Having_Licence" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="VehileKm_Tracker">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Distance_Covered" Type="String" Nullable="false" />
+          <Property Name="From" Type="String" Nullable="false" />
+          <Property Name="To" Type="String" Nullable="false" />
+          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="Fuel_FillUp_Amount" Type="String" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsVehileKm_Tracker" FromRole="VehileKm_Tracker" ToRole="Home_Needs" />
+        </EntityType>
+        <EntityType Name="Trip_Check_List">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Thing_Name" Type="String" Nullable="false" />
+          <Property Name="Unit" Type="String" Nullable="false" />
+          <Property Name="description" Type="String" Nullable="false" />
+          <Property Name="Trip_ForId" Type="Int32" Nullable="false" />
+          <Property Name="TakenId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trip_For" Relationship="ExpenseTracker.Trip_Check_ListTrip_For" FromRole="Trip_Check_List" ToRole="Trip_For" />
+          <Property Name="Trip_ForId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Taken" Relationship="ExpenseTracker.Trip_Check_ListTaken" FromRole="Trip_Check_List" ToRole="Taken" />
+          <Property Name="TakenId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Home_Needs" Relationship="ExpenseTracker.Home_NeedsTrip_Check_List" FromRole="Trip_Check_List" ToRole="Home_Needs" />
+        </EntityType>
+        <EntityType Name="Trip_For">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Study" Type="String" Nullable="false" />
+          <Property Name="Employment" Type="String" Nullable="false" />
+          <Property Name="Tour" Type="String" Nullable="false" />
+          <NavigationProperty Name="Trip_Check_List" Relationship="ExpenseTracker.Trip_Check_ListTrip_For" FromRole="Trip_For" ToRole="Trip_Check_List" />
+        </EntityType>
+        <EntityType Name="Taken">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Yes" Type="String" Nullable="false" />
+          <Property Name="no" Type="String" Nullable="false" />
+          <NavigationProperty Name="Trip_Check_List" Relationship="ExpenseTracker.Trip_Check_ListTaken" FromRole="Taken" ToRole="Trip_Check_List" />
+        </EntityType>
+        <Association Name="Home_NeedsLoans">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Loans" Role="Loans" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Loans">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Needs">
+              <PropertyRef Name="LoansId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Home_NeedsCheck_List">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Check_List" Role="Check_List" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Check_List">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Needs">
+              <PropertyRef Name="Check_ListId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Home_NeedsVehicle">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Vehicle" Role="Vehicle" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Needs">
+              <PropertyRef Name="VehicleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Need_Name">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Electricity_Bill" Type="Int64" Nullable="false" />
+          <Property Name="Fund" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Monthly_Needs" Relationship="ExpenseTracker.Monthly_NeedsNeed_Name" FromRole="Need_Name" ToRole="Monthly_Needs" />
+        </EntityType>
+        <Association Name="Home_NeedsMonthly_Needs">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Monthly_Needs" Role="Monthly_Needs" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Monthly_Needs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Needs">
+              <PropertyRef Name="Monthly_NeedsId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerPerson_Details">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Person_Details" Role="Person_Details" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Person_Details">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="Person_DetailsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Person_DetailsPerson_Type">
+          <End Type="ExpenseTracker.Person_Details" Role="Person_Details" Multiplicity="*" />
+          <End Type="ExpenseTracker.Person_Type" Role="Person_Type" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Person_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Person_Details">
+              <PropertyRef Name="Person_TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerExpense">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Expense" Role="Expense" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Expense">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="ExpenseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseExpense_category">
+          <End Type="ExpenseTracker.Expense" Role="Expense" Multiplicity="*" />
+          <End Type="ExpenseTracker.Expense_category" Role="Expense_category" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Expense_category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Expense">
+              <PropertyRef Name="Expense_categoryId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ThisMonthExpenseTracker">
+          <End Type="ExpenseTracker.ThisMonth" Role="ThisMonth" Multiplicity="*" />
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ExpenseTracker">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ThisMonth">
+              <PropertyRef Name="ExpenseTrackerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerAndHomeNeedsHome_Needs">
+          <End Type="ExpenseTracker.ExpenseTrackerAndHomeNeeds" Role="ExpenseTrackerAndHomeNeeds" Multiplicity="*" />
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Home_Needs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTrackerAndHomeNeeds">
+              <PropertyRef Name="Home_NeedsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerAndHomeNeedsExpenseTracker">
+          <End Type="ExpenseTracker.ExpenseTrackerAndHomeNeeds" Role="ExpenseTrackerAndHomeNeeds" Multiplicity="*" />
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ExpenseTracker">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTrackerAndHomeNeeds">
+              <PropertyRef Name="ExpenseTrackerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerReport_Total">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Report_Total" Role="Report_Total" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Report_Total">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="Report_TotalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerReport_By_Person">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Report_By_Person" Role="Report_By_Person" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Report_By_Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="Report_By_PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Check_ListStatus">
+          <End Type="ExpenseTracker.Check_List" Role="Check_List" Multiplicity="*" />
+          <End Type="ExpenseTracker.Status" Role="Status" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Check_List">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Family_MembersMember_Type">
+          <End Type="ExpenseTracker.Family_Members" Role="Family_Members" Multiplicity="*" />
+          <End Type="ExpenseTracker.Member_Type" Role="Member_Type" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Member_Type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Family_Members">
+              <PropertyRef Name="Member_TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Home_NeedsFamily_Members">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Family_Members" Role="Family_Members" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Family_Members">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Needs">
+              <PropertyRef Name="Family_MembersId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Family_MembersLicencedFor">
+          <End Type="ExpenseTracker.Family_Members" Role="Family_Members" Multiplicity="*" />
+          <End Type="ExpenseTracker.LicencedFor" Role="LicencedFor" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="LicencedFor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Family_Members">
+              <PropertyRef Name="LicencedForId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Home_OwnershipFamily_Members">
+          <End Type="ExpenseTracker.Home_Ownership" Role="Home_Ownership" Multiplicity="*" />
+          <End Type="ExpenseTracker.Family_Members" Role="Family_Members" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Family_Members">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Ownership">
+              <PropertyRef Name="Family_MembersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VehicleOwnershipOf">
+          <End Type="ExpenseTracker.Vehicle" Role="Vehicle" Multiplicity="*" />
+          <End Type="ExpenseTracker.OwnershipOf" Role="OwnershipOf" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="OwnershipOf">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="OwnershipOfId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VehicleHaving_Licence">
+          <End Type="ExpenseTracker.Vehicle" Role="Vehicle" Multiplicity="*" />
+          <End Type="ExpenseTracker.Having_Licence" Role="Having_Licence" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Having_Licence">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vehicle">
+              <PropertyRef Name="Having_LicenceId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Home_NeedsVehileKm_Tracker">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.VehileKm_Tracker" Role="VehileKm_Tracker" Multiplicity="1" />
+        </Association>
+        <Association Name="Trip_Check_ListTrip_For">
+          <End Type="ExpenseTracker.Trip_Check_List" Role="Trip_Check_List" Multiplicity="*" />
+          <End Type="ExpenseTracker.Trip_For" Role="Trip_For" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Trip_For">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trip_Check_List">
+              <PropertyRef Name="Trip_ForId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Trip_Check_ListTaken">
+          <End Type="ExpenseTracker.Trip_Check_List" Role="Trip_Check_List" Multiplicity="*" />
+          <End Type="ExpenseTracker.Taken" Role="Taken" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Taken">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Trip_Check_List">
+              <PropertyRef Name="TakenId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Home_NeedsTrip_Check_List">
+          <End Type="ExpenseTracker.Home_Needs" Role="Home_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Trip_Check_List" Role="Trip_Check_List" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Trip_Check_List">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Home_Needs">
+              <PropertyRef Name="Trip_Check_ListId2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Monthly_NeedsNeed_Name">
+          <End Type="ExpenseTracker.Monthly_Needs" Role="Monthly_Needs" Multiplicity="*" />
+          <End Type="ExpenseTracker.Need_Name" Role="Need_Name" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Need_Name">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Monthly_Needs">
+              <PropertyRef Name="Need_NameId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerPerson">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Person" Role="Person" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="PersonId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerReport_By_Search_And_Filter">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Report_By_Search_And_Filter" Role="Report_By_Search_And_Filter" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Report_By_Search_And_Filter">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="Report_By_Search_And_FilterId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerReport_By_Date">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Report_By_Date" Role="Report_By_Date" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Report_By_Date">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="Report_By_DateId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ExpenseTrackerReport_By_Month">
+          <End Type="ExpenseTracker.ExpenseTracker" Role="ExpenseTracker" Multiplicity="*" />
+          <End Type="ExpenseTracker.Report_By_Month" Role="Report_By_Month" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Report_By_Month">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExpenseTracker">
+              <PropertyRef Name="Report_By_MonthId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExpenseTrackerStoreContainer" CdmEntityContainer="ExpenseTrackerContainer">
+    <EntitySetMapping Name="ExpenseTrackers">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.ExpenseTracker)">
+        <MappingFragment StoreEntitySet="ExpenseTrackers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="Person_DetailsId" ColumnName="Person_DetailsId" />
+          <ScalarProperty Name="ExpenseId" ColumnName="ExpenseId" />
+          <ScalarProperty Name="Home_NeedsId" ColumnName="Home_NeedsId" />
+          <ScalarProperty Name="Report_TotalId" ColumnName="Report_TotalId" />
+          <ScalarProperty Name="Report_By_PersonId" ColumnName="Report_By_PersonId" />
+          <ScalarProperty Name="Report_By_MonthId" ColumnName="Report_By_MonthId" />
+          <ScalarProperty Name="Report_By_DateId" ColumnName="Report_By_DateId" />
+          <ScalarProperty Name="Report_By_Search_And_FilterId" ColumnName="Report_By_Search_And_FilterId" />
+          <ScalarProperty Name="Family_MembersId" ColumnName="Family_MembersId" />
+          <ScalarProperty Name="PersonId1" ColumnName="PersonId1" />
+          <ScalarProperty Name="Report_By_Search_And_FilterId1" ColumnName="Report_By_Search_And_FilterId1" />
+          <ScalarProperty Name="Report_By_DateId1" ColumnName="Report_By_DateId1" />
+          <ScalarProperty Name="Report_By_MonthId1" ColumnName="Report_By_MonthId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Details">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Person_Details)">
+        <MappingFragment StoreEntitySet="Person_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="OccupativeAddress" ColumnName="OccupativeAddress" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Person_TypeId" ColumnName="Person_TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Person_Type)">
+        <MappingFragment StoreEntitySet="Person_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Father" ColumnName="Father" />
+          <ScalarProperty Name="Mother" ColumnName="Mother" />
+          <ScalarProperty Name="Daughter" ColumnName="Daughter" />
+          <ScalarProperty Name="Son" ColumnName="Son" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Expense)">
+        <MappingFragment StoreEntitySet="Expenses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Expense_categoryId" ColumnName="Expense_categoryId" />
+          <ScalarProperty Name="Expense_categoryId1" ColumnName="Expense_categoryId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expense_category">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Expense_category)">
+        <MappingFragment StoreEntitySet="Expense_category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grocery" ColumnName="Grocery" />
+          <ScalarProperty Name="Bills" ColumnName="Bills" />
+          <ScalarProperty Name="Travel" ColumnName="Travel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThisMonths">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.ThisMonth)">
+        <MappingFragment StoreEntitySet="ThisMonths">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Salary_Balance" ColumnName="Salary_Balance" />
+          <ScalarProperty Name="Amount_Spent" ColumnName="Amount_Spent" />
+          <ScalarProperty Name="ExpenseTrackerId" ColumnName="ExpenseTrackerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpenseTrackerAndHomeNeeds">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.ExpenseTrackerAndHomeNeeds)">
+        <MappingFragment StoreEntitySet="ExpenseTrackerAndHomeNeeds">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Home_NeedsId" ColumnName="Home_NeedsId" />
+          <ScalarProperty Name="ExpenseTrackerId" ColumnName="ExpenseTrackerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_Total">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_Total)">
+        <MappingFragment StoreEntitySet="Report_Total">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total_Income" ColumnName="Total_Income" />
+          <ScalarProperty Name="Till_Date" ColumnName="Till_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Person">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Person)">
+        <MappingFragment StoreEntitySet="Report_By_Person">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="TotalIncome" ColumnName="TotalIncome" />
+          <ScalarProperty Name="Till_Date" ColumnName="Till_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Month">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Month)">
+        <MappingFragment StoreEntitySet="Report_By_Month">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Month_Name" ColumnName="Month_Name" />
+          <ScalarProperty Name="Total_Income" ColumnName="Total_Income" />
+          <ScalarProperty Name="Till_Month" ColumnName="Till_Month" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Date">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Date)">
+        <MappingFragment StoreEntitySet="Report_By_Date">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Total_Income" ColumnName="Total_Income" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Search_And_Filter">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Search_And_Filter)">
+        <MappingFragment StoreEntitySet="Report_By_Search_And_Filter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Home_Needs">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Home_Needs)">
+        <MappingFragment StoreEntitySet="Home_Needs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Entity" ColumnName="Entity" />
+          <ScalarProperty Name="ExpenseTrackerAndHomeNeedsId" ColumnName="ExpenseTrackerAndHomeNeedsId" />
+          <ScalarProperty Name="Monthly_NeedsId" ColumnName="Monthly_NeedsId" />
+          <ScalarProperty Name="LoansId" ColumnName="LoansId" />
+          <ScalarProperty Name="Check_ListId" ColumnName="Check_ListId" />
+          <ScalarProperty Name="Family_MembersId" ColumnName="Family_MembersId" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="VehileKm_TrackerId" ColumnName="VehileKm_TrackerId" />
+          <ScalarProperty Name="Trip_Check_ListId" ColumnName="Trip_Check_ListId" />
+          <ScalarProperty Name="Trip_Check_ListId1" ColumnName="Trip_Check_ListId1" />
+          <ScalarProperty Name="Monthly_NeedsId1" ColumnName="Monthly_NeedsId1" />
+          <ScalarProperty Name="Family_MembersId1" ColumnName="Family_MembersId1" />
+          <ScalarProperty Name="Trip_Check_ListId2" ColumnName="Trip_Check_ListId2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monthly_Needs">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Monthly_Needs)">
+        <MappingFragment StoreEntitySet="Monthly_Needs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Need_NameId" ColumnName="Need_NameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loans">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Loans)">
+        <MappingFragment StoreEntitySet="Loans">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Loan_Reason" ColumnName="Loan_Reason" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Interest" ColumnName="Interest" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Amount_In_Due" ColumnName="Amount_In_Due" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Check_List">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Check_List)">
+        <MappingFragment StoreEntitySet="Check_List">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ToDo" ColumnName="ToDo" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Property1" ColumnName="Property1" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Status)">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InProcess" ColumnName="InProcess" />
+          <ScalarProperty Name="Started" ColumnName="Started" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Family_Members">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Family_Members)">
+        <MappingFragment StoreEntitySet="Family_Members">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Adhar_Number" ColumnName="Adhar_Number" />
+          <ScalarProperty Name="PAN_CardNumber" ColumnName="PAN_CardNumber" />
+          <ScalarProperty Name="Election_CardNumber" ColumnName="Election_CardNumber" />
+          <ScalarProperty Name="Licence_Number" ColumnName="Licence_Number" />
+          <ScalarProperty Name="Bank_Account_detais" ColumnName="Bank_Account_detais" />
+          <ScalarProperty Name="Mobile_Number1" ColumnName="Mobile_Number1" />
+          <ScalarProperty Name="Mobile_Number2" ColumnName="Mobile_Number2" />
+          <ScalarProperty Name="Landline" ColumnName="Landline" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Occupation_Location" ColumnName="Occupation_Location" />
+          <ScalarProperty Name="Home_OwnershipId" ColumnName="Home_OwnershipId" />
+          <ScalarProperty Name="LicencedForId" ColumnName="LicencedForId" />
+          <ScalarProperty Name="Member_TypeId" ColumnName="Member_TypeId" />
+          <ScalarProperty Name="Home_OwnershipId1" ColumnName="Home_OwnershipId1" />
+          <ScalarProperty Name="LicencedForId1" ColumnName="LicencedForId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencedFors">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.LicencedFor)">
+        <MappingFragment StoreEntitySet="LicencedFors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Car" ColumnName="Car" />
+          <ScalarProperty Name="Bike" ColumnName="Bike" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Member_Type)">
+        <MappingFragment StoreEntitySet="Member_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Father" ColumnName="Father" />
+          <ScalarProperty Name="Mother" ColumnName="Mother" />
+          <ScalarProperty Name="Son1" ColumnName="Son1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Home_Ownership">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Home_Ownership)">
+        <MappingFragment StoreEntitySet="Home_Ownership">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rent" ColumnName="Rent" />
+          <ScalarProperty Name="Own" ColumnName="Own" />
+          <ScalarProperty Name="Family_MembersId" ColumnName="Family_MembersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Vehicle)">
+        <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Insurane_date_Renewal" ColumnName="Insurane_date_Renewal" />
+          <ScalarProperty Name="RCBook_Details" ColumnName="RCBook_Details" />
+          <ScalarProperty Name="Service_DueDate" ColumnName="Service_DueDate" />
+          <ScalarProperty Name="OwnershipOfId" ColumnName="OwnershipOfId" />
+          <ScalarProperty Name="Having_LicenceId" ColumnName="Having_LicenceId" />
+          <ScalarProperty Name="OwnershipOfId1" ColumnName="OwnershipOfId1" />
+          <ScalarProperty Name="Having_LicenceId1" ColumnName="Having_LicenceId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OwnershipOfs">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.OwnershipOf)">
+        <MappingFragment StoreEntitySet="OwnershipOfs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Bike" ColumnName="Bike" />
+          <ScalarProperty Name="Car" ColumnName="Car" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Having_Licence">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Having_Licence)">
+        <MappingFragment StoreEntitySet="Having_Licence">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Yes" ColumnName="Yes" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehileKm_Tracker">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.VehileKm_Tracker)">
+        <MappingFragment StoreEntitySet="VehileKm_Tracker">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Distance_Covered" ColumnName="Distance_Covered" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Fuel_FillUp_Amount" ColumnName="Fuel_FillUp_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trip_Check_List">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Trip_Check_List)">
+        <MappingFragment StoreEntitySet="Trip_Check_List">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Thing_Name" ColumnName="Thing_Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Trip_ForId" ColumnName="Trip_ForId" />
+          <ScalarProperty Name="TakenId" ColumnName="TakenId" />
+          <ScalarProperty Name="Trip_ForId1" ColumnName="Trip_ForId1" />
+          <ScalarProperty Name="TakenId1" ColumnName="TakenId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trip_For">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Trip_For)">
+        <MappingFragment StoreEntitySet="Trip_For">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Study" ColumnName="Study" />
+          <ScalarProperty Name="Employment" ColumnName="Employment" />
+          <ScalarProperty Name="Tour" ColumnName="Tour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Takens">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Taken)">
+        <MappingFragment StoreEntitySet="Takens">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Yes" ColumnName="Yes" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Need_Name">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Need_Name)">
+        <MappingFragment StoreEntitySet="Need_Name">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Electricity_Bill" ColumnName="Electricity_Bill" />
+          <ScalarProperty Name="Fund" ColumnName="Fund" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Home_NeedsVehileKm_Tracker" TypeName="ExpenseTracker.Home_NeedsVehileKm_Tracker" StoreEntitySet="Home_Needs">
+      <EndProperty Name="VehileKm_Tracker">
+        <ScalarProperty Name="Id" ColumnName="VehileKm_Tracker_Id" />
+      </EndProperty>
+      <EndProperty Name="Home_Needs">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

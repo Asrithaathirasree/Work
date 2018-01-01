@@ -1,0 +1,82 @@
+﻿@model ETAHN.Vehicle
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Vehicle</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Insurane_date_Renewal)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Insurane_date_Renewal)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.RCBook_Details)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.RCBook_Details)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Service_DueDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Service_DueDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OwnershipOfId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OwnershipOfId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Having_LicenceId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Having_LicenceId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.OwnershipOf.Bike)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.OwnershipOf.Bike)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Having_Licence.Yes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Having_Licence.Yes)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

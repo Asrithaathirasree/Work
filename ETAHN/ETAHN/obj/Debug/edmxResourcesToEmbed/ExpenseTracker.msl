@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExpenseTrackerStoreContainer" CdmEntityContainer="ExpenseTrackerContainer">
+    <EntitySetMapping Name="ExpenseTrackers">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.ExpenseTracker)">
+        <MappingFragment StoreEntitySet="ExpenseTrackers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="Person_DetailsId" ColumnName="Person_DetailsId" />
+          <ScalarProperty Name="ExpenseId" ColumnName="ExpenseId" />
+          <ScalarProperty Name="Home_NeedsId" ColumnName="Home_NeedsId" />
+          <ScalarProperty Name="Report_TotalId" ColumnName="Report_TotalId" />
+          <ScalarProperty Name="Report_By_PersonId" ColumnName="Report_By_PersonId" />
+          <ScalarProperty Name="Report_By_MonthId" ColumnName="Report_By_MonthId" />
+          <ScalarProperty Name="Report_By_DateId" ColumnName="Report_By_DateId" />
+          <ScalarProperty Name="Report_By_Search_And_FilterId" ColumnName="Report_By_Search_And_FilterId" />
+          <ScalarProperty Name="Family_MembersId" ColumnName="Family_MembersId" />
+          <ScalarProperty Name="PersonId1" ColumnName="PersonId1" />
+          <ScalarProperty Name="Report_By_Search_And_FilterId1" ColumnName="Report_By_Search_And_FilterId1" />
+          <ScalarProperty Name="Report_By_DateId1" ColumnName="Report_By_DateId1" />
+          <ScalarProperty Name="Report_By_MonthId1" ColumnName="Report_By_MonthId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Details">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Person_Details)">
+        <MappingFragment StoreEntitySet="Person_Details">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="OccupativeAddress" ColumnName="OccupativeAddress" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Person_TypeId" ColumnName="Person_TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Person_Type)">
+        <MappingFragment StoreEntitySet="Person_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Father" ColumnName="Father" />
+          <ScalarProperty Name="Mother" ColumnName="Mother" />
+          <ScalarProperty Name="Daughter" ColumnName="Daughter" />
+          <ScalarProperty Name="Son" ColumnName="Son" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expenses">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Expense)">
+        <MappingFragment StoreEntitySet="Expenses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Expense_categoryId" ColumnName="Expense_categoryId" />
+          <ScalarProperty Name="Expense_categoryId1" ColumnName="Expense_categoryId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expense_category">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Expense_category)">
+        <MappingFragment StoreEntitySet="Expense_category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grocery" ColumnName="Grocery" />
+          <ScalarProperty Name="Bills" ColumnName="Bills" />
+          <ScalarProperty Name="Travel" ColumnName="Travel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThisMonths">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.ThisMonth)">
+        <MappingFragment StoreEntitySet="ThisMonths">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Salary_Balance" ColumnName="Salary_Balance" />
+          <ScalarProperty Name="Amount_Spent" ColumnName="Amount_Spent" />
+          <ScalarProperty Name="ExpenseTrackerId" ColumnName="ExpenseTrackerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpenseTrackerAndHomeNeeds">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.ExpenseTrackerAndHomeNeeds)">
+        <MappingFragment StoreEntitySet="ExpenseTrackerAndHomeNeeds">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Home_NeedsId" ColumnName="Home_NeedsId" />
+          <ScalarProperty Name="ExpenseTrackerId" ColumnName="ExpenseTrackerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_Total">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_Total)">
+        <MappingFragment StoreEntitySet="Report_Total">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total_Income" ColumnName="Total_Income" />
+          <ScalarProperty Name="Till_Date" ColumnName="Till_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Person">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Person)">
+        <MappingFragment StoreEntitySet="Report_By_Person">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="TotalIncome" ColumnName="TotalIncome" />
+          <ScalarProperty Name="Till_Date" ColumnName="Till_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Month">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Month)">
+        <MappingFragment StoreEntitySet="Report_By_Month">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Month_Name" ColumnName="Month_Name" />
+          <ScalarProperty Name="Total_Income" ColumnName="Total_Income" />
+          <ScalarProperty Name="Till_Month" ColumnName="Till_Month" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Date">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Date)">
+        <MappingFragment StoreEntitySet="Report_By_Date">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Total_Income" ColumnName="Total_Income" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Report_By_Search_And_Filter">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Report_By_Search_And_Filter)">
+        <MappingFragment StoreEntitySet="Report_By_Search_And_Filter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Person" ColumnName="Person" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Home_Needs">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Home_Needs)">
+        <MappingFragment StoreEntitySet="Home_Needs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Entity" ColumnName="Entity" />
+          <ScalarProperty Name="ExpenseTrackerAndHomeNeedsId" ColumnName="ExpenseTrackerAndHomeNeedsId" />
+          <ScalarProperty Name="Monthly_NeedsId" ColumnName="Monthly_NeedsId" />
+          <ScalarProperty Name="LoansId" ColumnName="LoansId" />
+          <ScalarProperty Name="Check_ListId" ColumnName="Check_ListId" />
+          <ScalarProperty Name="Family_MembersId" ColumnName="Family_MembersId" />
+          <ScalarProperty Name="VehicleId" ColumnName="VehicleId" />
+          <ScalarProperty Name="VehileKm_TrackerId" ColumnName="VehileKm_TrackerId" />
+          <ScalarProperty Name="Trip_Check_ListId" ColumnName="Trip_Check_ListId" />
+          <ScalarProperty Name="Trip_Check_ListId1" ColumnName="Trip_Check_ListId1" />
+          <ScalarProperty Name="Monthly_NeedsId1" ColumnName="Monthly_NeedsId1" />
+          <ScalarProperty Name="Family_MembersId1" ColumnName="Family_MembersId1" />
+          <ScalarProperty Name="Trip_Check_ListId2" ColumnName="Trip_Check_ListId2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monthly_Needs">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Monthly_Needs)">
+        <MappingFragment StoreEntitySet="Monthly_Needs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Need_NameId" ColumnName="Need_NameId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loans">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Loans)">
+        <MappingFragment StoreEntitySet="Loans">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Loan_Reason" ColumnName="Loan_Reason" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Interest" ColumnName="Interest" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Amount_In_Due" ColumnName="Amount_In_Due" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Check_List">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Check_List)">
+        <MappingFragment StoreEntitySet="Check_List">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ToDo" ColumnName="ToDo" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Property1" ColumnName="Property1" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Status)">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InProcess" ColumnName="InProcess" />
+          <ScalarProperty Name="Started" ColumnName="Started" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Family_Members">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Family_Members)">
+        <MappingFragment StoreEntitySet="Family_Members">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email_id" ColumnName="Email_id" />
+          <ScalarProperty Name="Adhar_Number" ColumnName="Adhar_Number" />
+          <ScalarProperty Name="PAN_CardNumber" ColumnName="PAN_CardNumber" />
+          <ScalarProperty Name="Election_CardNumber" ColumnName="Election_CardNumber" />
+          <ScalarProperty Name="Licence_Number" ColumnName="Licence_Number" />
+          <ScalarProperty Name="Bank_Account_detais" ColumnName="Bank_Account_detais" />
+          <ScalarProperty Name="Mobile_Number1" ColumnName="Mobile_Number1" />
+          <ScalarProperty Name="Mobile_Number2" ColumnName="Mobile_Number2" />
+          <ScalarProperty Name="Landline" ColumnName="Landline" />
+          <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+          <ScalarProperty Name="Occupation_Location" ColumnName="Occupation_Location" />
+          <ScalarProperty Name="Home_OwnershipId" ColumnName="Home_OwnershipId" />
+          <ScalarProperty Name="LicencedForId" ColumnName="LicencedForId" />
+          <ScalarProperty Name="Member_TypeId" ColumnName="Member_TypeId" />
+          <ScalarProperty Name="Home_OwnershipId1" ColumnName="Home_OwnershipId1" />
+          <ScalarProperty Name="LicencedForId1" ColumnName="LicencedForId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicencedFors">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.LicencedFor)">
+        <MappingFragment StoreEntitySet="LicencedFors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Car" ColumnName="Car" />
+          <ScalarProperty Name="Bike" ColumnName="Bike" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member_Type">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Member_Type)">
+        <MappingFragment StoreEntitySet="Member_Type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Father" ColumnName="Father" />
+          <ScalarProperty Name="Mother" ColumnName="Mother" />
+          <ScalarProperty Name="Son1" ColumnName="Son1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Home_Ownership">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Home_Ownership)">
+        <MappingFragment StoreEntitySet="Home_Ownership">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rent" ColumnName="Rent" />
+          <ScalarProperty Name="Own" ColumnName="Own" />
+          <ScalarProperty Name="Family_MembersId" ColumnName="Family_MembersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Vehicle)">
+        <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Insurane_date_Renewal" ColumnName="Insurane_date_Renewal" />
+          <ScalarProperty Name="RCBook_Details" ColumnName="RCBook_Details" />
+          <ScalarProperty Name="Service_DueDate" ColumnName="Service_DueDate" />
+          <ScalarProperty Name="OwnershipOfId" ColumnName="OwnershipOfId" />
+          <ScalarProperty Name="Having_LicenceId" ColumnName="Having_LicenceId" />
+          <ScalarProperty Name="OwnershipOfId1" ColumnName="OwnershipOfId1" />
+          <ScalarProperty Name="Having_LicenceId1" ColumnName="Having_LicenceId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OwnershipOfs">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.OwnershipOf)">
+        <MappingFragment StoreEntitySet="OwnershipOfs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Bike" ColumnName="Bike" />
+          <ScalarProperty Name="Car" ColumnName="Car" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Having_Licence">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Having_Licence)">
+        <MappingFragment StoreEntitySet="Having_Licence">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Yes" ColumnName="Yes" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehileKm_Tracker">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.VehileKm_Tracker)">
+        <MappingFragment StoreEntitySet="VehileKm_Tracker">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Distance_Covered" ColumnName="Distance_Covered" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Fuel_FillUp_Amount" ColumnName="Fuel_FillUp_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trip_Check_List">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Trip_Check_List)">
+        <MappingFragment StoreEntitySet="Trip_Check_List">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Thing_Name" ColumnName="Thing_Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="Trip_ForId" ColumnName="Trip_ForId" />
+          <ScalarProperty Name="TakenId" ColumnName="TakenId" />
+          <ScalarProperty Name="Trip_ForId1" ColumnName="Trip_ForId1" />
+          <ScalarProperty Name="TakenId1" ColumnName="TakenId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trip_For">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Trip_For)">
+        <MappingFragment StoreEntitySet="Trip_For">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Study" ColumnName="Study" />
+          <ScalarProperty Name="Employment" ColumnName="Employment" />
+          <ScalarProperty Name="Tour" ColumnName="Tour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Takens">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Taken)">
+        <MappingFragment StoreEntitySet="Takens">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Yes" ColumnName="Yes" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Need_Name">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseTracker.Need_Name)">
+        <MappingFragment StoreEntitySet="Need_Name">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Electricity_Bill" ColumnName="Electricity_Bill" />
+          <ScalarProperty Name="Fund" ColumnName="Fund" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Home_NeedsVehileKm_Tracker" TypeName="ExpenseTracker.Home_NeedsVehileKm_Tracker" StoreEntitySet="Home_Needs">
+      <EndProperty Name="VehileKm_Tracker">
+        <ScalarProperty Name="Id" ColumnName="VehileKm_Tracker_Id" />
+      </EndProperty>
+      <EndProperty Name="Home_Needs">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
