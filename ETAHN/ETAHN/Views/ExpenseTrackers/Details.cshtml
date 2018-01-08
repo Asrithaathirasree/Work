@@ -1,0 +1,146 @@
+﻿@model ETAHN.ExpenseTracker
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>ExpenseTracker</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PersonId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PersonId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Home_NeedsId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Home_NeedsId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_MonthId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_MonthId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_DateId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_DateId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_Search_And_FilterId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_Search_And_FilterId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Family_MembersId)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Family_MembersId)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Person_Details.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Person_Details.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Expense.Description)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Expense.Description)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_Total.Till_Date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_Total.Till_Date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_Person.Person)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_Person.Person)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Person.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_Search_And_Filter.Person)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_Search_And_Filter.Person)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_Date.Date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_Date.Date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Report_By_Month.Month_Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Report_By_Month.Month_Name)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

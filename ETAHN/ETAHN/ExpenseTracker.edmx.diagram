@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="50cd96fbb20c479aa556b370d37a555c" Name="Diagram1" ZoomLevel="76" >
+        <EntityTypeShape EntityType="ExpenseTracker.ExpenseTracker" Width="1.5" PointX="2.625" PointY="0.5" />
+        <EntityTypeShape EntityType="ExpenseTracker.Person" Width="1.5" PointX="5.375" PointY="2.5" />
+        <EntityTypeShape EntityType="ExpenseTracker.Person_Details" Width="1.5" PointX="7.375" PointY="1.75" />
+        <EntityTypeShape EntityType="ExpenseTracker.Person_Type" Width="1.5" PointX="9.5" PointY="2.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Expense" Width="1.5" PointX="11.625" PointY="2.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Expense_category" Width="1.5" PointX="13.875" PointY="1.875" />
+        <EntityTypeShape EntityType="ExpenseTracker.ThisMonth" Width="1.5" PointX="16.125" PointY="2.125" />
+        <EntityTypeShape EntityType="ExpenseTracker.ExpenseTrackerAndHomeNeeds" Width="1.5" PointX="0.5" PointY="4.5" />
+        <EntityTypeShape EntityType="ExpenseTracker.Report_Total" Width="1.5" PointX="18.625" PointY="1.75" />
+        <EntityTypeShape EntityType="ExpenseTracker.Report_By_Person" Width="1.5" PointX="21.5" PointY="1.875" />
+        <EntityTypeShape EntityType="ExpenseTracker.Report_By_Month" Width="1.5" PointX="24.125" PointY="2.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Report_By_Date" Width="1.5" PointX="26.5" PointY="1.75" />
+        <EntityTypeShape EntityType="ExpenseTracker.Report_By_Search_And_Filter" Width="1.5" PointX="29.375" PointY="1.875" />
+        <EntityTypeShape EntityType="ExpenseTracker.Home_Needs" Width="1.5" PointX="2.125" PointY="7.375" />
+        <EntityTypeShape EntityType="ExpenseTracker.Monthly_Needs" Width="1.5" PointX="5.125" PointY="6.75" />
+        <EntityTypeShape EntityType="ExpenseTracker.Loans" Width="1.5" PointX="7.5" PointY="6.5" />
+        <EntityTypeShape EntityType="ExpenseTracker.Check_List" Width="1.5" PointX="9.5" PointY="6.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Status" Width="1.5" PointX="9.5" PointY="9.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Family_Members" Width="1.5" PointX="12" PointY="7" />
+        <EntityTypeShape EntityType="ExpenseTracker.LicencedFor" Width="1.5" PointX="14.5" PointY="6.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Member_Type" Width="1.5" PointX="14.5" PointY="8.375" />
+        <EntityTypeShape EntityType="ExpenseTracker.Home_Ownership" Width="1.5" PointX="14.5" PointY="10.625" />
+        <EntityTypeShape EntityType="ExpenseTracker.Vehicle" Width="1.5" PointX="16.625" PointY="6.875" />
+        <EntityTypeShape EntityType="ExpenseTracker.OwnershipOf" Width="1.5" PointX="18.875" PointY="6.375" />
+        <EntityTypeShape EntityType="ExpenseTracker.Having_Licence" Width="1.5" PointX="19" PointY="8.875" />
+        <EntityTypeShape EntityType="ExpenseTracker.VehileKm_Tracker" Width="1.5" PointX="22.625" PointY="7.25" />
+        <EntityTypeShape EntityType="ExpenseTracker.Trip_Check_List" Width="1.5" PointX="25.5" PointY="5" />
+        <EntityTypeShape EntityType="ExpenseTracker.Trip_For" Width="1.5" PointX="28" PointY="5.875" />
+        <EntityTypeShape EntityType="ExpenseTracker.Taken" Width="1.5" PointX="28" PointY="8.5" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsLoans" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsCheck_List" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsVehicle" />
+        <EntityTypeShape EntityType="ExpenseTracker.Need_Name" Width="1.5" PointX="5" PointY="9.5" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsMonthly_Needs" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerPerson_Details" />
+        <AssociationConnector Association="ExpenseTracker.Person_DetailsPerson_Type" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerExpense" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseExpense_category" />
+        <AssociationConnector Association="ExpenseTracker.ThisMonthExpenseTracker" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerAndHomeNeedsHome_Needs" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerAndHomeNeedsExpenseTracker" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerReport_Total" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerReport_By_Person" />
+        <AssociationConnector Association="ExpenseTracker.Check_ListStatus" />
+        <AssociationConnector Association="ExpenseTracker.Family_MembersMember_Type" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsFamily_Members" />
+        <AssociationConnector Association="ExpenseTracker.Family_MembersLicencedFor" />
+        <AssociationConnector Association="ExpenseTracker.Home_OwnershipFamily_Members" />
+        <AssociationConnector Association="ExpenseTracker.VehicleOwnershipOf" />
+        <AssociationConnector Association="ExpenseTracker.VehicleHaving_Licence" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsVehileKm_Tracker" />
+        <AssociationConnector Association="ExpenseTracker.Trip_Check_ListTrip_For" />
+        <AssociationConnector Association="ExpenseTracker.Trip_Check_ListTaken" />
+        <AssociationConnector Association="ExpenseTracker.Home_NeedsTrip_Check_List" />
+        <AssociationConnector Association="ExpenseTracker.Monthly_NeedsNeed_Name" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerPerson" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerReport_By_Search_And_Filter" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerReport_By_Date" />
+        <AssociationConnector Association="ExpenseTracker.ExpenseTrackerReport_By_Month" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

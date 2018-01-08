@@ -1,0 +1,82 @@
+﻿@model sea.Fees
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Fees</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fee_Amount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Fee_Amount)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Department)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Department)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Student_Regno)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Student_Regno)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Student_Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Student_Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Semester)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Semester)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Year)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Year)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

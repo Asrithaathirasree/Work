@@ -1,0 +1,50 @@
+﻿@model ETAHN.Report_By_Month
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Report_By_Month</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Month_Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Month_Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Total_Income)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Total_Income)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Till_Month)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Till_Month)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

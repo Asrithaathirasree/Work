@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
   <Alias Key="Model" Value="Sample" />
   <Alias Key="Target" Value="Sample.Store" />
   <EntityContainerMapping CdmEntityContainer="SampleContainer" StorageEntityContainer="SampleTargetContainer" />
+=======
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SampleStoreContainer" CdmEntityContainer="SampleContainer">
+    <EntitySetMapping Name="Samples">
+      <EntityTypeMapping TypeName="IsTypeOf(Sample.Sample)">
+        <MappingFragment StoreEntitySet="Samples">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+>>>>>>> 02114f8d1788466ecb5155fec153a4b59bffb479
 </Mapping>
