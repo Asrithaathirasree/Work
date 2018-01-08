@@ -189,6 +189,16 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\plugins.js" />
+    <Content Include="Content\js\vendor\bootstrap.js" />
+    <Content Include="Content\js\vendor\bootstrap.min.js" />
+    <Content Include="Content\js\vendor\jquery-1.11.2.min.js" />
+    <Content Include="Content\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
+    <Content Include="Content\js\vendor\npm.js" />
+    <Content Include="Content\portfolio-page.html" />
+    <Content Include="Content\visit-templatemo.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -251,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\css\" />
+    <Folder Include="Content\fonts\" />
+    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
